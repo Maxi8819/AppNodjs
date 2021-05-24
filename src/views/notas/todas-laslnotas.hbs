@@ -1,0 +1,32 @@
+<div class="row">
+    {{!-- sintaxsis handlebars, mostrar todasa las notas --}}
+    {{#each notas}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+            <h4 class="card-titulo d-flex justify-content-between align-items" >
+                {{titulo}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a> {{!--lapiz para editar // referencia el id de la nota--}}
+                {{!--<a href="/notes/edit/{{_id--> crea la ruta con el id de la nota--}}
+            </h4>
+              <p>{{descripcion}}</p>
+              <form action="notes/delete/{{_id}}?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn btn-danger btn-block btn-sm" type="submit">
+                    Borrar
+              </button> {{!--btn-block ocupe tdo el ancho btn -sm que sea chico--}}
+              </form>
+        </div>
+        </div>
+        
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h1>Hola  {{user.name}}</h1>
+            <p class="lead">Sin notas al momento</p>{{!--lead resalta--}}
+            <a href="notes/agregarNota" class="btn btn-success btn-block">Crear Nota</a>   
+        </div>
+
+    </div>
+    {{/each}}
+</div>

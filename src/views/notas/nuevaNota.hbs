@@ -1,0 +1,31 @@
+{{!-- sintaxsis handlebars, por cada error mostra la alerta de boots --}}
+
+
+<div class="col-md-4 mx-auto">
+    <!--coumna botstrap 4 aca hago la nota-->
+    <div class="card">
+        <div class="card">
+            <div class="card-header">
+                <h3>Nueva Nota </h3>
+            </div>
+        </div>
+        <div class="card-body">
+           {{!--  envia el formulario a por nueva nota por medio del metodo post --}}
+            <form action="/notes/nuevaNota" method="POST"> 
+                <div class="form-group">
+                    <!--que tipo de ingreso es / name mindica de que manera lo recibe el servidor, autofocus cursor adentro-->
+                    <input type="text" name="titulo" class="form-control" placeholder="Titulo" autofocus>  
+                        {{!-- texarea: espacio para escribir descripcion --}}
+                        <hr>
+                   <div class="form-group">
+                       <textarea name= "descripcion" class="form-control" placeholder="Descripción"></textarea>
+                   </div>
+                   <div class="form-group">
+                {{!--boton rapido: button.btn.btn-primary.btn-block, tipo subtmi click ejecuta el formulario y lo envia al servidor --}}
+                       <button class="btn btn-primary btn-block" type="submit">Crear Nota</button>
+                   </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
